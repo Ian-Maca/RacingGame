@@ -19,11 +19,11 @@ public class CarController : MonoBehaviour
         float moveVertical = Input.GetAxis("Vertical");
 
         // Forward/Backward Movement
-        var movement = transform.forward * (moveVertical * speed);
+        var movement = -transform.forward * (moveVertical * speed);
 
         // Steering
         float turnAngle = moveHorizontal * turnSpeed;
-        Quaternion turn = Quaternion.Euler(turnAngle, 0f, 0f);
+        Quaternion turn = Quaternion.Euler(0f, turnAngle, 0f);
 
         // Apply movement and rotation
         rb.MovePosition(rb.position + movement * Time.deltaTime);
