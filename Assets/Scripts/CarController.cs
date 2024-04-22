@@ -5,13 +5,18 @@ using UnityEngine;
 
 public class CarController : MonoBehaviour
 {
+    public float PB_TIMER_MAX = 99999999f;
+    
     public float speed = 10.0f;
     public float turnSpeed = 5.0f;
+    
     public Transform respawnPoint;
     private Rigidbody _rb;
+    
     private bool _canMove = true;
-    private float _current_time = 0f;
-    private float _personal_best = 99999999f;
+    public float _current_time = 0f;
+    public float _personal_best = 99999999f;
+    
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
@@ -57,17 +62,23 @@ public class CarController : MonoBehaviour
             if (_current_time < _personal_best)
             {
                 _personal_best = _current_time;
+                Debug.Log("Finished! - New Personal Best: " + _personal_best);
             }
-            
+            else
+            {
+                Debug.Log("Finished! - Old Personal Best: " + _personal_best);
+            }
         }
         
         // HIT A WALL
-        StartCoroutine( Respawn());
+        StartCoroutine(Respawn());
         
     }
 
     IEnumerator Respawn()
     {
+        _current_time = 0;
+        
         transform.position = respawnPoint.position;
         transform.rotation = respawnPoint.rotation;
         _canMove = false;

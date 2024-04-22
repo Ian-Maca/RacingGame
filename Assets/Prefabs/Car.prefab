@@ -269,7 +269,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c39c5581be2e6604185a46e50c034dd8,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3481376577550409016}
+      addedObject: {fileID: 317173372414005985}
   m_SourcePrefab: {fileID: 100100000, guid: c39c5581be2e6604185a46e50c034dd8, type: 3}
 --- !u!4 &438106129392403071 stripped
 Transform:
@@ -291,7 +291,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963673118753904837}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 0.0000001
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -309,7 +309,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 1
+  m_CollisionDetection: 2
 --- !u!114 &7654222490383504526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -322,11 +322,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7feae41042e5a941b336b144d5fdb5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PB_TIMER_MAX: 100000000
   speed: 30
   turnSpeed: 7
   respawnPoint: {fileID: 0}
---- !u!136 &3481376577550409016
-CapsuleCollider:
+  _current_time: 0
+  _personal_best: 100000000
+--- !u!65 &317173372414005985
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -343,8 +346,6 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 109.941696
-  m_Height: 85.97616
-  m_Direction: 1
-  m_Center: {x: 0.0742836, y: 0.5982208, z: -0.00012207031}
+  serializedVersion: 3
+  m_Size: {x: 167.28122, y: 85.97616, z: 219.88339}
+  m_Center: {x: 0.0742836, y: 0.59822845, z: -0.00024414062}
